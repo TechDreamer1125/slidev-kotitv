@@ -21,9 +21,9 @@ drawings:
   persist: false
 ---
 
-# Welcome to Slidev
+# 项目的局部重构
 
-Presentation slides for developers
+流程分享
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
@@ -47,22 +47,20 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 
-# What is Slidev?
+# 什么是局部重构?
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
+面对项目中无法解决、改动风险大等种类的问题，由研发团队发起的代码局部改造工作。通过代码的结构变化、业务设计、性能调优等方面的变化，最终解决团队问题。
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
+- 📝 **目的性** - 明确重构的目的，以解决问题作为重构的发起原因，以最终问题是否解决衡量重构的好坏
+- 🎨 **方案制定** - 制定明确、详细、可衡量的技术方案
+- 🧑‍💻 **风险评估** - 明确重构所带来的风险，要对可能发生的风险做到把控
+- 🤹 **资源消耗与收益** - 明确重构所付出的资源（研发工时、测试工时等）与所带来的回报
+- 🕐 **时间规划** - 制定详尽的时间规划表，用于推进重构按部就班进行，提高最终的结果交付率
+- 📚 **过程记录** - 对整个重构过程中的关键节点、关键事件做到完整记录
+- 🛠 **项目复盘** - 开发完成并上线后对整个重构过程进行复盘
 
 <br>
 <br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
 
 <!--
 You can have `style` tag in markdown to override the style for the current page.
@@ -83,259 +81,109 @@ h1 {
 
 ---
 
-# Navigation
+# 局部重构流程
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+对于客户端研发团队的局部重构，需要按照以下流程进行。 [learn more]()
 
-### Keyboard Shortcuts
+### 环节 内容
 
 |     |     |
 | --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
+| 内容发起| 由个人或团队发现问题，并进行重构行为的发起。 |
+| 项目评审 | 针对发起的内容（需有初版方案），由团队负责人进行项目评审 |
+| 方案讨论与制定 | 团队负责人参与进行方案讨论与制定 |
+| 项目开发与推进 | 由发起人（项目负责人）主导重构内容开发与进度把控 |
+| 过程记录与汇报 | 由发起人（项目负责人）进行整个重构过程的记录 |
+| 项目复盘 | 开发完成并上线后，由发起人（项目负责人）对整个重构过程进行复盘 |
 
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
+根据以上所有内容，组装成一个完整的项目文档。
 ---
 
-# Code
+# 示例 -- SN 业务解耦
 
-Use code snippets and get the highlighting directly![^1]
+以 SN 业务解耦为示例，进行一个完整重构内容的展示。 [^1]
 
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
+### 目的性
+SN 是目前系统中对于货品管理过程中的核心业务功能，嵌入到了系统各类业务模块（出入库、箱子、退货等）中。伴随着此模块的业务需求增加（强化弱序列号功能、B2B 模块未来的变化、医药行业对于 SN 的管控），对于此模块的修改愈发频繁。因之前代码设计的原因，所带来的就是更改业务过程中容易出现以下几个问题。
 
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = {...user, ...update}  
-  saveUser(id, newUser)
-}
-```
+- 现在的原因
+  - 对于问题或业务的修改容易出现遗漏
+  - 同一功能嵌入不同业务，测试需全部业务核验，无法仅做一次核验
+- 未来的原因
+  - 新人去修改业务时无法全局思考，只能针对需求做机械式更改
+  - 代码冗余原因、导致很难全局检查业务不一致性
 
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
+针对以上问题，个人觉得有必要对 SN 模块进行局部代码重构，解决以上问题的发生。
 
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
+[^1]: [SN 业务解耦项目文档]()
 ---
 
-# Components
+# 示例 -- SN 业务解耦
 
 <div grid="~ cols-2 gap-4">
 <div>
 
-You can use Vue components directly inside your slides.
+### 方案制定
 
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
+#### 1、风险评估
 
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
+#### 2、资源消耗与收益
 
 </div>
 <div>
 
-```html
-<Tweet id="1390115482657726468" />
-```
+#### 3、时间规划
 
-<Tweet id="1390115482657726468" scale="0.65" />
+|  **时间范围**   |  **预期内容**  |
+| --- | --- |
+| xx年xx月xx日 -- yy 日 | 完成重构方案设计 |
+| xx年xx月xx日 -- yy 日 | 完成所有关于 SN 功能的业务梳理，明确业务影响范围 |
+| xx年xx月xx日 -- yy 日 | 代码结构搭建已完成。目前进度为项目整体的 30%。 |
 
 </div>
 </div>
 
+---
+layout: two-cols
+---
+
+# 示例 -- SN 业务解耦
+
+### 过程记录
+
+|  **时间范围**   |  **关键动作**  |
+| --- | --- |
+| xx年xx月xx日 -- yy 日 | 完成重构方案设计 |
+| xx年xx月xx日 -- yy 日 | 完成所有关于 SN 功能的业务梳理，明确业务影响范围 |
+| xx年xx月xx日 -- yy 日 | 代码结构搭建已完成。目前进度为项目整体的 30%。 |
+
+::right::
+
+<img class="m-5" src="https://llv.edu.vn/media/2022/03/process.jpg">
 
 ---
 class: px-20
 ---
+# 注意事项
 
-# Themes
+对于整个的重构过程可能出现的问题提一些建议。
 
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
+<div grid="~ cols-2 gap-4">
+<div>
 
-<div grid="~ cols-2 gap-2" m="-t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
+- 进度阶段性汇报
+- 注意时间进度的偏移程度
+- 理解项目文档的重要性
+- 重视初版方案与 DEMO 制作
+- 重试沟通与表达
 
 </div>
+<div>
 
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-preload: false
----
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
-
-  <div 
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
+<img class="m-5" src="https://austinkleon.com/wp-content/uploads/2012/10/00-show-cover.jpg">
 
 </div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
-
-<br>
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-2 gap-10 pt-4 -mb-6">
-
-```mermaid {scale: 0.9}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
 </div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
 
 
 ---
@@ -345,4 +193,10 @@ class: text-center
 
 # Learn More
 
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+[系统局部重构的规则与流程]() · [SN 业务解耦项目文档]() 
+
+---
+layout: center
+---
+
+# Q&A
