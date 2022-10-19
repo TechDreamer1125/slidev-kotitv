@@ -81,8 +81,8 @@ layout: center
 # 📃 ** 分享目的**
 
 ---
-layout: two-cols
----
+
+## layout: two-cols
 
 # 内部分享的几点优先诉求
 
@@ -103,8 +103,8 @@ layout: two-cols
 
 
 ---
-layout: two-cols
----
+
+## layout: two-cols
 
 # 额外目的
 
@@ -173,8 +173,8 @@ layout: two-cols
 <br>
 <img class="h-90" src="https://cc-image-resizer.cwg.tw/resize/uri/https%3A%2F%2Fcw1.tw%2FCC%2Fimages%2Farticle%2F201804%2Farticle-5ac1e74a3f09f.jpg/?w=810&h=543&fit=fill">
 
-
 ---
+
 layout: center
 ---
 
@@ -239,7 +239,7 @@ layout: two-cols
 <img class="m-5" src="https://reputationtoday.in/wp-content/uploads/2021/10/learning-doing.jpg">
 
 ---
-layout: center
----
+
+## layout: center
 
 # Q&A
