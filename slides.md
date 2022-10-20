@@ -48,7 +48,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 # 介绍
 
-一场有效的内部分享不仅包含选取合适的内容，整个内容的呈现方式、分享后续利用都有助于让一场准备充分的分享价值最大化。
+一场有效的内部分享不仅包含选取合适的内容，整个内容的呈现方式、分享的后续利用都有助于让一场准备充分的分享价值最大化。
 
 在团队内部完成一场内容分享至少要包含或者说需要理清楚以下几个内容。
 
@@ -84,33 +84,33 @@ layout: center
 
 ## layout: two-cols
 
-# 内部分享的几点优先诉求
+# 准备分享内容上的几点优先诉求
 
-- 无歧义
+- 利用率
   - 禁止使用反问句
   - 不建议使用表示程度的词汇：**较多、较好、完全地、基本地**
   - 不建议使用表示量的词汇：**有些、非常、大量、一些、少许**
 - 通俗易懂
-  - 不推荐使用特定人群才了解的词汇
-  - 禁止啰嗦冗长、逻辑混乱
+  - 面向群体
+  - 类比
   - 勿重复表达同一事物
-- 用词恰当
+- 问题解决
   - [新华社新闻报道中的禁用词（第一批）](https://www.digitaling.com/articles/22975.html)
 
 ::right::
-
+<!-- TODO:诉求图片 -->
 <img class="h-100 m-10" src="https://fems.com.au/images/Australian-Standards.jpg">
 
 
 ---
-
 ## layout: two-cols
+---
 
 # 额外目的
 
-1. 使用明确使用方式的符号
-2. 使用正确中英文格式的符号
-3. 禁止使用自造符号：**！！！**
+1. 形成团队良好的习惯
+2. 利于展开下一个阶段工作
+3. 学习型组织要求
 
 <br>
 <br>
@@ -122,6 +122,20 @@ layout: center
 <br>
 <br>
 <img src="http://www.prcba.com/wp-content/uploads/2020/04/20200425123601_23304.jpg">
+
+
+---
+layout: quote
+---
+
+举例子：文字与格式的分享
+
+<br>
+
+<img class="h-50" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/The_Chicago_Manual_of_Style%2C_Seventeenth_Edition.jpg/640px-The_Chicago_Manual_of_Style%2C_Seventeenth_Edition.jpg">
+
+[文字与格式](https://www.digitaling.com/articles/22975.html)
+
 
 ---
 layout: center
@@ -135,36 +149,15 @@ layout: two-cols
 
 # 思考转化率
 
-- 一致性
-  - 文档的标点、句式与风格
-  - 配图、样式、色彩使用
-- 逻辑性
-  - 线性逻辑
-  - 交叉逻辑
-  - 嵌套逻辑
-- 学习
-  - 基于目的的学习方式
-  - 先表面，再深入
-  - 以用起来为主
-
-::right::
-
-<br>
-<br>
-<img class="h-90" src="https://cc-image-resizer.cwg.tw/resize/uri/https%3A%2F%2Fcw1.tw%2FCC%2Fimages%2Farticle%2F201804%2Farticle-5ac1e74a3f09f.jpg/?w=810&h=543&fit=fill">
-
-# 思考转化率
-
-- 一致性
-  - 文档的标点、句式与风格
-  - 配图、样式、色彩使用
-- 逻辑性
-  - 线性逻辑
-  - 交叉逻辑
-  - 嵌套逻辑
-- 学习
-  - 基于目的的学习方式
-  - 先表面，再深入
+- 关联性
+  - 团队近期关联
+  - 未来发展与倾向关联
+- 可利用性
+  -
+  - 
+- 及时性
+  - 足够及时的分享
+  - 
   - 以用起来为主
 
 ::right::
@@ -184,13 +177,13 @@ layout: center
 layout: two-cols
 ---
 
-# 目的性的表达
+# 模式分类
 
-- 场景收集
-- 因人而异
+- PPT 讲述
+- 动态画图
   - 软件本地化
   - 语言本地化
-- 突出主次
+- 
 
 ::right::
 
