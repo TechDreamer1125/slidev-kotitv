@@ -48,7 +48,7 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 # 介绍
 
-一场有效的内部分享不仅包含选取合适的内容，整个内容的呈现方式、分享的后续利用都有助于让一场准备充分的分享价值最大化。
+一场有效的内部分享不仅包含选取合适的内容，内容的呈现方式、分享内容的后续利用都有助于让一场准备充分的分享价值最大化。
 
 在团队内部完成一场内容分享至少要包含或者说需要理清楚以下几个内容。
 
@@ -78,63 +78,59 @@ h1 {
 layout: center
 ---
 
-# 📃 ** 分享目的**
+# 📃 分享目的
+
 
 ---
-
-## layout: two-cols
-
+layout: two-cols
+---
 # 准备分享内容上的几点优先诉求
 
 - 利用率
-  - 禁止使用反问句
-  - 不建议使用表示程度的词汇：**较多、较好、完全地、基本地**
-  - 不建议使用表示量的词汇：**有些、非常、大量、一些、少许**
+  - 团队当下或未来是否会使用此分享内容
+  - 是否解决了团队当下的某个问题
+  - 是否适用于参会的大多数人
 - 通俗易懂
-  - 面向群体
-  - 类比
-  - 勿重复表达同一事物
+  - 明确面向的群体，使用特定的语言
+  - 使用类比描述晦涩难懂的事物
+  - 适当地重复表达重要内容
 - 问题解决
-  - [新华社新闻报道中的禁用词（第一批）](https://www.digitaling.com/articles/22975.html)
+  - 当下团队面临的主要问题（一个或几个）
+  - 个人面对并解决了的问题
 
 ::right::
-<!-- TODO:诉求图片 -->
-<img class="h-100 m-10" src="https://fems.com.au/images/Australian-Standards.jpg">
+
+<img class="h-100 m-10" src="https://cdn.pixabay.com/photo/2019/06/25/08/09/priority-4297708_1280.jpg">
 
 
 ---
-## layout: two-cols
+layout: two-cols
 ---
 
 # 额外目的
 
-1. 形成团队良好的习惯
+1. 形成良好的团队习惯
 2. 利于展开下一个阶段工作
-3. 学习型组织要求
+3. 满足公司与团队的学习型组织要求
 
-<br>
-<br>
 
-👉 [文档格式规范](http://www.zhaowenyu.com/doc-standard/marks.html)
-<br>
 ::right::
-<br>
-<br>
-<br>
-<img src="http://www.prcba.com/wp-content/uploads/2020/04/20200425123601_23304.jpg">
+
+<img src="https://cdn.pixabay.com/photo/2016/03/28/14/19/destination-1285851_1280.png">
 
 
 ---
-layout: quote
+layout: center
 ---
 
-举例子：文字与格式的分享
+### 👇 案例
+
+[《文字与格式》分享](文字与格式.pdf)
 
 <br>
+<br>
 
-<img class="h-50" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/The_Chicago_Manual_of_Style%2C_Seventeenth_Edition.jpg/640px-The_Chicago_Manual_of_Style%2C_Seventeenth_Edition.jpg">
-
-[文字与格式](https://www.digitaling.com/articles/22975.html)
+<img class="h-80" src="https://cdn.pixabay.com/photo/2015/02/03/23/41/paper-623167_1280.jpg">
 
 
 ---
@@ -147,31 +143,29 @@ layout: center
 layout: two-cols
 ---
 
-# 思考转化率
+# 转化率
 
-- 关联性
-  - 团队近期关联
-  - 未来发展与倾向关联
-- 可利用性
-  -
-  - 
-- 及时性
-  - 足够及时的分享
-  - 
-  - 以用起来为主
+- 优先关联性
+  - 与团队最近的发生的事情产生关联
+  - 与下个阶段的工作产生关联
+- 提升利用率
+  - 文档先行，分享结束后以可执行文档影响团队后续工作
+  - 成功经验先行，以成功的案例作为分享核心
+- 分享及时性
 
 ::right::
 
 <br>
 <br>
-<img class="h-90" src="https://cc-image-resizer.cwg.tw/resize/uri/https%3A%2F%2Fcw1.tw%2FCC%2Fimages%2Farticle%2F201804%2Farticle-5ac1e74a3f09f.jpg/?w=810&h=543&fit=fill">
+
+<img class="h-90" src="https://cdn.pixabay.com/photo/2018/08/18/13/27/browser-3614768_1280.png">
+
 
 ---
-
 layout: center
 ---
 
-# 💡 **分享模式**
+# 💡 分享模式
 
 ---
 layout: two-cols
@@ -181,58 +175,36 @@ layout: two-cols
 
 - PPT 讲述
 - 动态画图
-  - 软件本地化
-  - 语言本地化
-- 
+- 发散讲解
+- 文档式
 
 ::right::
 
-<img src="https://p3-tt.byteimg.com/origin/dfic-imagehandler/e18d04d7-e693-4118-9f3f-539d43fd37ac">
+<img src="https://cdn.pixabay.com/photo/2021/11/24/11/58/coach-6820960_1280.jpg">
 
 ---
 layout: center
 ---
 
-# ⌨️ **质量保障**
+# ⌨️ 质量保障
 
 ---
 layout: two-cols
 ---
 
-# 案例：[工时设计](https://zsxj.yuque.com/flghe4/hhr1qu/izhpbv)
+# 内容质量
 
-- 客户端研发源于“目的”进行的需求工时改造
-- 采用与之前文档不同的自建模板进行构造
-- 整个文档的交付耗时两天
-  - 明确内容大纲与呈现方式
-  - 填充大纲内容，确保整个内容的全面不遗漏，用文档解释落地制度过程中的所有问题
-  - 可被流程图翻译的流程
-  - 做错别字、格式一致性、语句通顺与否等基础性检查
+- 确保内容有效和当前正确性
+- 宁缺毋滥、以身作则
+- 前期指导 + 纠正与迭代
 
 ::right::
 
-<img class="m-5" src="https://blogimage-1258616042.cos.ap-beijing.myqcloud.com/%E5%9B%A2%E9%98%9F%E5%88%86%E4%BA%AB/%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%B7%A5%E6%97%B6%E8%AE%BE%E8%AE%A1%E4%B8%8E%E9%9C%80%E6%B1%82%E9%A2%86%E5%8F%96%E6%B5%81%E7%A8%8B.jpg">
+<img class="m-5" src="https://epicwebtechno.com/wp-content/uploads/2019/02/uu.jpg">
 
 
 ---
-layout: two-cols
+layout: center
 ---
-
-# 案例：旺店通打印答疑文档
-
-- 面向更大群体的标准化文档
-- 对内外均有益的文档
-- 能让客户愿意看下去的文档
-  - 收集并汇总所有相关问题
-  - 填充任何能想到的解决方案
-  - 删一半再删一半
-
-::right::
-
-<img class="m-5" src="https://reputationtoday.in/wp-content/uploads/2021/10/learning-doing.jpg">
-
----
-
-## layout: center
 
 # Q&A
